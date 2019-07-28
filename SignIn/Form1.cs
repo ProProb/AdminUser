@@ -21,5 +21,32 @@ namespace SignIn
         {
 
         }
+
+        private void log_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void sign_Click(object sender, EventArgs e)
+        {
+           
+            if (log.Text == "AS" && pass.Text == "12")
+            {
+                Form2 form2 = new Form2();
+                form2.Show();
+            }
+            else if (log.Text == "SA" && pass.Text == "21")
+            {
+                Form3 form3 = new Form3();
+                form3.Show();
+            }
+            else
+                MessageBox.Show("Incorrect password or login!");
+        }
     }
 }

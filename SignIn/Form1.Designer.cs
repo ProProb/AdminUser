@@ -53,6 +53,7 @@
             this.sign.TabIndex = 10;
             this.sign.Text = "Sign in";
             this.sign.UseVisualStyleBackColor = true;
+            this.sign.Click += new System.EventHandler(this.sign_Click);
             // 
             // label2
             // 
@@ -79,6 +80,7 @@
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(135, 25);
             this.pass.TabIndex = 7;
+            this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
             // 
             // log
             // 
@@ -87,6 +89,7 @@
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(135, 25);
             this.log.TabIndex = 6;
+            this.log.TextChanged += new System.EventHandler(this.log_TextChanged);
             // 
             // Form1
             // 
