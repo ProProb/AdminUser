@@ -48,5 +48,21 @@ namespace SignIn
             else
                 MessageBox.Show("Incorrect password or login!");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            log.Text = "";
+            pass.Text = "";
+            Close();
+           
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }
