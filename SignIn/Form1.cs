@@ -57,12 +57,32 @@ namespace SignIn
            
 
         }
-
+        private bool tf = true;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
+            int i;
+            char a;
+                if (tf == true)
+                {
+                for( i = 0; i != pass.Text.Length; i++)
+                {
+                    a = pass.Text[i];
+                    pass.Text += a;
+                }
+                pass.Text += "m";
+                tf = false;
+                
+                }
+            else
+            {
+                pass.PasswordChar = '*';
+                tf = true;
+            }
+
+
+
         }
 
-        
+
     }
 }
