@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label loginLabel;
             System.Windows.Forms.Label passwordLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.database1DataSet = new SignIn.Database1DataSet();
@@ -52,8 +52,8 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tableBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.database1DataSet1 = new SignIn.Database1DataSet1();
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet1 = new SignIn.Database1DataSet1();
             this.tableTableAdapter1 = new SignIn.Database1DataSet1TableAdapters.TableTableAdapter();
             this.tableAdapterManager1 = new SignIn.Database1DataSet1TableAdapters.TableAdapterManager();
             this.idTextBox = new System.Windows.Forms.TextBox();
@@ -66,9 +66,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).BeginInit();
             this.tableBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(92, 177);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 5;
+            idLabel.Text = "Id:";
+            // 
+            // loginLabel
+            // 
+            loginLabel.AutoSize = true;
+            loginLabel.Location = new System.Drawing.Point(92, 203);
+            loginLabel.Name = "loginLabel";
+            loginLabel.Size = new System.Drawing.Size(36, 13);
+            loginLabel.TabIndex = 7;
+            loginLabel.Text = "Login:";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(92, 229);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(56, 13);
+            passwordLabel.TabIndex = 9;
+            passwordLabel.Text = "Password:";
             // 
             // label2
             // 
@@ -116,6 +143,7 @@
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -191,7 +219,7 @@
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Text = "для {0}";
             // 
             // tableBindingNavigatorSaveItem
             // 
@@ -204,9 +232,9 @@
             // 
             // tableBindingNavigator
             // 
-            this.tableBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.tableBindingNavigator.AddNewItem = this.bindingNavigatorCountItem;
             this.tableBindingNavigator.BindingSource = this.tableBindingSource;
-            this.tableBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.tableBindingNavigator.CountItem = this.bindingNavigatorDeleteItem;
             this.tableBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.tableBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -231,16 +259,17 @@
             this.tableBindingNavigator.Size = new System.Drawing.Size(808, 25);
             this.tableBindingNavigator.TabIndex = 5;
             this.tableBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // database1DataSet1
-            // 
-            this.database1DataSet1.DataSetName = "Database1DataSet1";
-            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableBindingNavigator.RefreshItems += new System.EventHandler(this.tableBindingNavigator_RefreshItems_1);
             // 
             // tableBindingSource1
             // 
             this.tableBindingSource1.DataMember = "Table";
             this.tableBindingSource1.DataSource = this.database1DataSet1;
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet1";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableTableAdapter1
             // 
@@ -253,53 +282,26 @@
             this.tableAdapterManager1.TableTableAdapter = this.tableTableAdapter1;
             this.tableAdapterManager1.UpdateOrder = SignIn.Database1DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(82, 177);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 5;
-            idLabel.Text = "Id:";
-            // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(144, 174);
+            this.idTextBox.Location = new System.Drawing.Point(154, 177);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTextBox.TabIndex = 6;
             // 
-            // loginLabel
-            // 
-            loginLabel.AutoSize = true;
-            loginLabel.Location = new System.Drawing.Point(82, 203);
-            loginLabel.Name = "loginLabel";
-            loginLabel.Size = new System.Drawing.Size(36, 13);
-            loginLabel.TabIndex = 7;
-            loginLabel.Text = "Login:";
-            // 
             // loginTextBox
             // 
             this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "Login", true));
-            this.loginTextBox.Location = new System.Drawing.Point(144, 200);
+            this.loginTextBox.Location = new System.Drawing.Point(154, 200);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(100, 20);
             this.loginTextBox.TabIndex = 8;
             // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(82, 229);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(56, 13);
-            passwordLabel.TabIndex = 9;
-            passwordLabel.Text = "Password:";
-            // 
             // passwordTextBox
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "Password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(144, 226);
+            this.passwordTextBox.Location = new System.Drawing.Point(154, 226);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 10;
@@ -326,8 +328,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).EndInit();
             this.tableBindingNavigator.ResumeLayout(false);
             this.tableBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
