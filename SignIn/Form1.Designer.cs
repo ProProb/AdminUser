@@ -39,22 +39,24 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button1.Location = new System.Drawing.Point(247, 253);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // sign
             // 
+            this.sign.BackColor = System.Drawing.SystemColors.ControlDark;
             this.sign.Location = new System.Drawing.Point(422, 253);
             this.sign.Name = "sign";
             this.sign.Size = new System.Drawing.Size(135, 23);
             this.sign.TabIndex = 10;
             this.sign.Text = "Sign in";
-            this.sign.UseVisualStyleBackColor = true;
+            this.sign.UseVisualStyleBackColor = false;
             this.sign.Click += new System.EventHandler(this.sign_Click);
             // 
             // label2
@@ -97,7 +99,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.checkBox1.BackColor = System.Drawing.SystemColors.Control;
             this.checkBox1.Location = new System.Drawing.Point(422, 225);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(53, 17);

@@ -35,12 +35,12 @@ namespace SignIn
         private void sign_Click(object sender, EventArgs e)
         {
            
-            if (log.Text == "AS" && pass.Text == "12")
+            if (log.Text == "as" && pass.Text == "12")
             {
                 Form2 form2 = new Form2();
                 form2.Show();
             }
-            else if (log.Text == "SA" && pass.Text == "21")
+            else if (log.Text == "sa" && pass.Text == "21")
             {
                 Form3 form3 = new Form3();
                 form3.Show();
@@ -57,30 +57,18 @@ namespace SignIn
            
 
         }
-        private bool tf = true;
+        
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             int i;
-            char a;
-                if (tf == true)
+            char a = ' ';
+                if (true)
                 {
-                for( i = 0; i != pass.Text.Length; i++)
+                for (i = 0; i <= pass.Text.Length; i++)
                 {
-                    a = pass.Text[i];
-                    pass.Text += a;
+                    a += pass.Text[1];
                 }
-                pass.Text += "m";
-                tf = false;
-                
                 }
-            else
-            {
-                pass.PasswordChar = '*';
-                tf = true;
-            }
-
-
-
         }
 
 

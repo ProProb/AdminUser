@@ -39,7 +39,6 @@
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableTableAdapter = new SignIn.Database1DataSetTableAdapters.TableTableAdapter();
             this.tableAdapterManager = new SignIn.Database1DataSetTableAdapters.TableAdapterManager();
-            this.tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -52,6 +51,11 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tableBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.tableBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.database1DataSet1 = new SignIn.Database1DataSet1();
+            this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTableAdapter1 = new SignIn.Database1DataSet1TableAdapters.TableTableAdapter();
+            this.tableAdapterManager1 = new SignIn.Database1DataSet1TableAdapters.TableAdapterManager();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -62,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).BeginInit();
             this.tableBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -102,36 +108,6 @@
             this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
             this.tableAdapterManager.UpdateOrder = SignIn.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // tableBindingNavigator
-            // 
-            this.tableBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.tableBindingNavigator.BindingSource = this.tableBindingSource;
-            this.tableBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.tableBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.tableBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.tableBindingNavigatorSaveItem});
-            this.tableBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.tableBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.tableBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.tableBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.tableBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.tableBindingNavigator.Name = "tableBindingNavigator";
-            this.tableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tableBindingNavigator.Size = new System.Drawing.Size(800, 25);
-            this.tableBindingNavigator.TabIndex = 5;
-            this.tableBindingNavigator.Text = "bindingNavigator1";
-            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -167,14 +143,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -182,7 +158,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -191,13 +167,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -214,7 +190,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // tableBindingNavigatorSaveItem
@@ -222,14 +198,65 @@
             this.tableBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tableBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tableBindingNavigatorSaveItem.Image")));
             this.tableBindingNavigatorSaveItem.Name = "tableBindingNavigatorSaveItem";
-            this.tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.tableBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tableBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.tableBindingNavigatorSaveItem.Click += new System.EventHandler(this.tableBindingNavigatorSaveItem_Click_2);
+            // 
+            // tableBindingNavigator
+            // 
+            this.tableBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.tableBindingNavigator.BindingSource = this.tableBindingSource;
+            this.tableBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.tableBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.tableBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.tableBindingNavigatorSaveItem});
+            this.tableBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.tableBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.tableBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.tableBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.tableBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.tableBindingNavigator.Name = "tableBindingNavigator";
+            this.tableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.tableBindingNavigator.Size = new System.Drawing.Size(808, 25);
+            this.tableBindingNavigator.TabIndex = 5;
+            this.tableBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet1";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableBindingSource1
+            // 
+            this.tableBindingSource1.DataMember = "Table";
+            this.tableBindingSource1.DataSource = this.database1DataSet1;
+            // 
+            // tableTableAdapter1
+            // 
+            this.tableTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Table2TableAdapter = null;
+            this.tableAdapterManager1.TableTableAdapter = this.tableTableAdapter1;
+            this.tableAdapterManager1.UpdateOrder = SignIn.Database1DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(47, 180);
+            idLabel.Location = new System.Drawing.Point(82, 177);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 5;
@@ -237,8 +264,8 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(109, 177);
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(144, 174);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTextBox.TabIndex = 6;
@@ -246,7 +273,7 @@
             // loginLabel
             // 
             loginLabel.AutoSize = true;
-            loginLabel.Location = new System.Drawing.Point(47, 206);
+            loginLabel.Location = new System.Drawing.Point(82, 203);
             loginLabel.Name = "loginLabel";
             loginLabel.Size = new System.Drawing.Size(36, 13);
             loginLabel.TabIndex = 7;
@@ -254,8 +281,8 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Login", true));
-            this.loginTextBox.Location = new System.Drawing.Point(109, 203);
+            this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "Login", true));
+            this.loginTextBox.Location = new System.Drawing.Point(144, 200);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(100, 20);
             this.loginTextBox.TabIndex = 8;
@@ -263,7 +290,7 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(47, 232);
+            passwordLabel.Location = new System.Drawing.Point(82, 229);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new System.Drawing.Size(56, 13);
             passwordLabel.TabIndex = 9;
@@ -271,8 +298,8 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(109, 229);
+            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource1, "Password", true));
+            this.passwordTextBox.Location = new System.Drawing.Point(144, 226);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 10;
@@ -281,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 450);
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(loginLabel);
@@ -299,6 +326,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingNavigator)).EndInit();
             this.tableBindingNavigator.ResumeLayout(false);
             this.tableBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,19 +341,23 @@
         private System.Windows.Forms.BindingSource tableBindingSource;
         private Database1DataSetTableAdapters.TableTableAdapter tableTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator tableBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
         private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton tableBindingNavigatorSaveItem;
+        private System.Windows.Forms.BindingNavigator tableBindingNavigator;
+        private Database1DataSet1 database1DataSet1;
+        private System.Windows.Forms.BindingSource tableBindingSource1;
+        private Database1DataSet1TableAdapters.TableTableAdapter tableTableAdapter1;
+        private Database1DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
